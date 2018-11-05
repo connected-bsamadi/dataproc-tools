@@ -5,8 +5,8 @@ export BUCKET=ontario-2018-dataproc
 export DATAPROC_CLUSTER_NAME=mydataproc
 export JUPYTER_PORT=8080
 
-gcloud dataproc clusters create ${DATAPROC_CLUSTER_NAME} \
-    --project ${PROJECT} \
-    --bucket ${BUCKET} \
-    --initialization-actions \
-        gs://dataproc-initialization-actions/jupyter/jupyter.sh
+gcloud beta dataproc clusters create ${DATAPROC_CLUSTER_NAME} \
+  --project ${PROJECT} \
+  --bucket ${BUCKET} \
+  --optional-components=ANACONDA,JUPYTER \
+  --image-version=1.3-deb9
