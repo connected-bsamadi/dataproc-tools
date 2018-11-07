@@ -1,1 +1,0 @@
-spark-shell --packages ml.combust.mleap:mleap-spark_2.11:0.10.0
