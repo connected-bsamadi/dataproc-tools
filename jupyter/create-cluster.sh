@@ -8,7 +8,7 @@ gcloud beta dataproc clusters create ${DATAPROC_CLUSTER_NAME} \
   --project ${PROJECT} \
   --bucket ${BUCKET} \
   --optional-components=ANACONDA,JUPYTER \
-  --image-version=1.3-deb9 \
+  --image-version=1.3 \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-base_2.11:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-core_2.11:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-runtime_2.11:0.10.0' \
