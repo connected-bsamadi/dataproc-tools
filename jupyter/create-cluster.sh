@@ -11,6 +11,8 @@ gcloud beta dataproc clusters create ${DATAPROC_CLUSTER_NAME} \
   --image-version=1.3 \
   --master-machine-type=n1-standard-2 \
   --worker-machine-type=n1-standard-2 \
+  --properties spark:spark.jars.packages='org.apache.spark:spark-tags_2.12:2.4.0' \
+  --properties spark:spark.jars.packages='org.apache.spark:spark-mllib_2.12:2.4.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-base_2.12:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-core_2.12:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-runtime_2.12:0.10.0' \
