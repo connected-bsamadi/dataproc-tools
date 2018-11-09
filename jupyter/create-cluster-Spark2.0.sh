@@ -7,7 +7,7 @@ export DATAPROC_CLUSTER_NAME=mydataproc
 gcloud dataproc clusters create ${DATAPROC_CLUSTER_NAME} \
   --project ${PROJECT} \
   --bucket ${BUCKET} \
-  --image-version=1.2 \
+  --image-version=1.1 \
   --metadata "JUPYTER_PORT=8123,JUPYTER_CONDA_PACKAGES=numpy:pandas:scikit-learn" \
   --initialization-actions \
       gs://dataproc-initialization-actions/jupyter2/jupyter2.sh \

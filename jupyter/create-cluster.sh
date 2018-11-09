@@ -14,5 +14,6 @@ gcloud beta dataproc clusters create ${DATAPROC_CLUSTER_NAME} \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-runtime_2.12:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-spark_2.12:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-spark-base_2.12:0.10.0' \
+  --properties spark:spark.jars.packages='ml.combust.mleap:mleap-spark-extension_2.12:0.10.0' \
   --properties spark:spark.jars.packages='ml.combust.mleap:mleap-tensor_2.12:0.10.0' \
   --properties spark:spark.jars.packages='com.databricks:spark-avro_2.11:4.0.0' 
