@@ -1,0 +1,78 @@
+{
+"schema": {
+  "fields": [{
+    "name": "id",
+    "type": "string"
+  },
+  {
+    "name": "city",
+    "type": "string"
+  },
+  {
+    "name": "state",
+    "type": "string"
+  },
+  {
+    "name": "space",
+    "type": "string"
+  },
+  {
+    "name": "bathrooms",
+    "type": "double"
+  },
+  {
+    "name": "bedrooms",
+    "type": "double"
+  },
+  {
+    "name": "room_type",
+    "type": "string"
+  },
+  {
+    "name": "host_is_superhost",
+    "type": "double"
+  },
+  {
+    "name": "cancellation_policy",
+    "type": "string"
+  },
+  {
+    "name": "security_deposit",
+    "type": "double"
+  },
+  {
+    "name": "price_per_bedroom",
+    "type": "double"
+  },
+  {
+    "name": "number_of_reviews",
+    "type": "double"
+  },
+  {
+    "name": "extra_people",
+    "type": "double"
+  },
+  {
+    "name": "instant_bookable",
+    "type": "double"
+  },
+  {
+    "name": "cleaning_fee",
+    "type": "double"
+  },
+  {
+    "name": "review_scores_rating",
+    "type": "double"
+  },
+  {
+    "name": "square_feet",
+    "type": "double"
+  },
+  {
+    "name": "n_bathrooms_more_than_two",
+    "type": "double"
+  }
+]
+},
+  "rows": [["1949687", "London", "Other", "A unique Victorian development", 1.0, 1.0, "Entire home/apt", 0.0, "moderate", 100.0, 80.0, 8.0, 10.0, 0.0, 20.0, 94.0, 380.0, 0.0 ]]
+}
