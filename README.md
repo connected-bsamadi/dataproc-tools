@@ -37,3 +37,19 @@ sudo curl -sSL https://get.docker.com/ | sh
 ```
 docker run -p 65327:65327 -v /tmp/models:/models combustml/mleap-serving:0.13.0-SNAPSHOT
 ```
+
+Now, you can use another machine to communicate with the MLeap server. Before sending commands to the server make sure that you have defined the right [firewall rules](https://console.cloud.google.com/networking/firewalls/list) so that you have the permissions required for communicating with the port 65327 on the MLeap server. Now, you can follow these steps:
+
+- define the IP address of the MLeap server
+```
+export MLEAPSERVER=35.202.151.167
+```
+- tell the MLeap server which model you want to use:
+```
+curl -XPUT -H "content-type: application/json" -d '{"path":"/models/pyspark.lr.zip"}' http://${MLEAPSERVER}:65327/model
+```
+- create a JSON file that includes the input data you want to send to the MLeap server. There is an example for such [JSON input file](https://github.com/connected-bsamadi/dataproc-tools/blob/master/examples/airbnb/airbnb.json) in this repository.
+- send the JSON input data to the MLeap server:
+```
+curl -XPOST -H "accept: application/json" -H "content-type: application/json" -d @airbnb.json http://${MLEAPSERVER}:65327/transform
+```
