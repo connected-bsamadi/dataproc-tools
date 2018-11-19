@@ -11,9 +11,10 @@ Scripts for working with Google Dataproc:
 - Upload the [scripts folder](https://github.com/connected-bsamadi/dataproc-tools/tree/master/scripts) in this repository to your bucker 
 - Edit the [create-cluster.sh](https://github.com/connected-bsamadi/dataproc-tools/blob/master/jupyter/create-cluster-python2.sh) script to enter your project and bucket ID's
 - Run the [create-cluster.sh](https://github.com/connected-bsamadi/dataproc-tools/blob/master/jupyter/create-cluster-python2.sh) script to create a Dataproc (Spark/Hadoop) cluster
+- Make sure you have access to these ports on the master node of the cluster: 8088,9780,8080,8123,4042,65327
 
 ## Creating a bundle out of Spark MLlib pipelines
-This [Notebook](https://github.com/connected-bsamadi/dataproc-tools/blob/master/examples/PySpark%20-%20AirBnb.ipynb) demonstrates an example of creating a Spark MLlib pipeline and saving it as a bundle. Copy the resulting bundle(s) to your storage bucket.
+This [Notebook](https://github.com/connected-bsamadi/dataproc-tools/blob/master/examples/PySpark%20-%20AirBnb.ipynb) demonstrates an example of creating a Spark MLlib pipeline and saving it as a bundle. A Jupyter Notebook server is available on port 8123 of the master node of the Dataproc cluster. You can upload and run the [Airbnb Notebook](https://github.com/connected-bsamadi/dataproc-tools/blob/master/examples/PySpark%20-%20AirBnb.ipynb) to get a bundle as `pyspark.lr.zip`. Then, copy the resulting bundle (zip file) to your storage bucket using the gcloud CLI.
 
 ## Deploying a Spark MLlib pipeline into production as a REST API using MLeap
 To deploy an MLeap bundle, we need to run this [Docker image](https://hub.docker.com/r/combustml/mleap-serving/tags/). In our case, since the models are stored in a Google Storage Bucket and we will use the gcloud CLI to copy the bundles to the REST API server, we will deploy a [simple pre-configured Debian VM](https://console.cloud.google.com/marketplace/partners/gcp-quickstart-vm-public). You can then connect to the instance using SSH. Then follow these steps:
